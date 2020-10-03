@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".Activities.TransferFunds">
+
+  <LinearLayout
+    android:id="@+id/viewAccLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+
+  <androidx.appcompat.widget.Toolbar
+    android:id="@+id/transferFundsToolBar"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary"
+    android:minHeight="?attr/actionBarSize"
+    android:theme="?attr/actionBarTheme"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/viewAccLayout"
+    app:title="SisonkeBankApp"
+    app:titleTextColor="#ffffff" ></androidx.appcompat.widget.Toolbar>
+
+  <TextView
+    android:id="@+id/txtTransferHeading"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="42dp"
+    android:text="@string/transfer_to_from_accounts"
+    android:textColor="#046C83"
+    android:textSize="24sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/transferFundsToolBar" />
+
+  <TextView
+    android:id="@+id/txt_Cur_Acc_Balance"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="24dp"
+    android:layout_marginEnd="16dp"
+    android:textSize="16sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/txtTransferHeading" />
+
+  <TextView
+    android:id="@+id/txt_Sav_Acc_Bal"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="16dp"
+    android:textSize="16sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/txt_Cur_Acc_Balance" />
+
+  <LinearLayout
+    android:id="@+id/viewAccHLayout1"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="32dp"
+    android:layout_marginEnd="16dp"
+    android:orientation="horizontal"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/txt_Sav_Acc_Bal">
+
+    <TextView
+      android:id="@+id/txtTransferAmount"
+      android:layout_width="15dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="@string/enter_transfer_amount_r"
+      android:textSize="16sp" />
+
+    <EditText
+      android:id="@+id/editTxtTransferAmount"
+      android:layout_width="8dip"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:ems="10"
+      android:inputType="number"
+      android:autofillHints="" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/viewAccHLayout2"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="32dp"
+    android:layout_marginEnd="16dp"
+    android:orientation="horizontal"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/viewAccHLayout1">
+
+    <TextView
+      android:id="@+id/txt_transferFrom"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="Transfer From"
+      android:textSize="16sp" />
+
+    <Spinner
+      android:id="@+id/spinner"
+      android:layout_width="120dip"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:spinnerMode="dropdown" />
+  </LinearLayout>
+
+  <Button
+    android:id="@+id/transferBtn"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="32dp"
+    android:layout_marginTop="42dp"
+    android:layout_marginEnd="32dp"
+    android:backgroundTint="#046C83"
+    android:text="@string/transfer"
+    android:textColor="#FFFFFF"
+    android:textSize="18sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/viewAccHLayout2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,13 @@
+<resources>
+  <string name="app_name">SisonkeBankApp</string>
+  <string name="welcome_to_the_sisonke_bank_app">Welcome to the Sisonke Bank App</string>
+  <string name="sisonkebankapp">SisonkeBankApp</string>
+  <string name="transfer_to_from_accounts">Transfer to/from Accounts</string>
+  <string name="current_account_balance">Current Account Balance:</string>
+  <string name="transfer">Transfer</string>
+  <string name="savings_account_balance">Savings Account Balance:</string>
+  <string name="enter_transfer_amount_r">Enter Transfer Amount: R</string>
+  <string name="enter_your_details_below_to_register">Enter your details below to register</string>
+  <string name="gender">Gender</string>
+  <string name="already_have_an_account_login_here">Already have an account? Login Here.</string>
+</resources>
