@@ -156,25 +156,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     return user;
   }
   // Method to update savings and current account balances
-  public boolean updateBalance(Double currentAmount,Double savingsAmount){
+  public boolean updateBalance(Double currentAmount,Double savingsAmount,String[] emails){
     SQLiteDatabase db = this.getWritableDatabase();
-    ContentValues contentValues = new ContentValues();
+    ContentValues updateValues = new ContentValues();
 
-    contentValues.put(COL_9, savingsAmount);
-    contentValues.put(COL_8,currentAmount);
+    updateValues.put(COL_9, savingsAmount);
+    updateValues.put(COL_8,currentAmount);
 
-    UserBank user = new UserBank();
-    user.setCurrAcc(currentAmount);
-    user.setSavingsAcc(savingsAmount);
+    String where = "email =?";
+    db = this.getReadableDatabase();
+
+
     // Bind
-    long result = db.update(TABLE_NAME,contentValues,null,null);
+    long result = db.update(TABLE_NAME,updateValues,where,emails);
     if(result == -1) {
       return false;
     }
-    SQLiteDatabase db2 = getReadableDatabase();
-
-
-
+    db.close();
     return true;
   }
 

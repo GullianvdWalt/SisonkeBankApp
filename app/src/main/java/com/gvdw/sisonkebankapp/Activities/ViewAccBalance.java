@@ -12,7 +12,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 
 import com.gvdw.sisonkebankapp.DataModels.DatabaseHelper;
 import com.gvdw.sisonkebankapp.DataModels.UserBank;
@@ -38,7 +38,7 @@ public class ViewAccBalance extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_view_acc_balance);
-    toolBar = (Toolbar) findViewById(R.id.viewAccToolBar);
+    toolBar =  (androidx.appcompat.widget.Toolbar) findViewById(R.id.viewAccToolBar);
     setSupportActionBar(toolBar);
     db = new DatabaseHelper(this);
     Intent goToMainPage = getIntent();
@@ -72,7 +72,7 @@ public class ViewAccBalance extends AppCompatActivity {
 
 }
 
-  private void setSupportActionBar(Toolbar toolBar) {
+  public void setSupportActionBar(Toolbar toolBar) {
     toolBar.setNavigationIcon(R.drawable.ic_action_name);
     toolBar.setNavigationOnClickListener(new View.OnClickListener() {
       @Override

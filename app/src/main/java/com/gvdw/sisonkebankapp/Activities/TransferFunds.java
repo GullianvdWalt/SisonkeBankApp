@@ -144,9 +144,13 @@ public class TransferFunds extends AppCompatActivity implements OnItemSelectedLi
             }else{
               currAmount -= amount;
               savingsAmount+=amount;
-              Boolean transferred = db.updateBalance(currAmount,savingsAmount);
+              String[] emails = {email};
+              Boolean transferred = db.updateBalance(currAmount,savingsAmount,emails);
               if(transferred == true){
                 Toast.makeText(this,"Balance Updated Successfully!",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(TransferFunds.this,TransferFunds.class);
+                intent.putExtra("email",email);
+                startActivity(intent);
 
               }else{
                 Toast.makeText(this,"There was a problem while updating the balance",Toast.LENGTH_LONG).show();
@@ -158,9 +162,13 @@ public class TransferFunds extends AppCompatActivity implements OnItemSelectedLi
           }else{
             currAmount += amount;
             savingsAmount -=amount;
-            Boolean transferred = db.updateBalance(currAmount,savingsAmount);
+            String[] emails = {email};
+            Boolean transferred = db.updateBalance(currAmount,savingsAmount,emails);
             if(transferred == true){
               Toast.makeText(this,"Balance Updated Successfully!",Toast.LENGTH_LONG).show();
+              Intent intent = new Intent(TransferFunds.this,TransferFunds.class);
+              intent.putExtra("email",email);
+              startActivity(intent);
 
             }else{
               Toast.makeText(this,"There was a problem while updating the balance",Toast.LENGTH_LONG).show();
